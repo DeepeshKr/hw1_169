@@ -3,7 +3,11 @@ require 'sinatra/flash'
 require './lib/hangperson_game.rb'
 
 class HangpersonApp < Sinatra::Base
-
+  
+  # post '/new' do
+  #   "Hello World"
+  # end
+  
   enable :sessions
   register Sinatra::Flash
   
