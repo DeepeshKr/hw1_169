@@ -9,6 +9,7 @@ class HangpersonApp < Sinatra::Base
   
   before do
     # code that is called before EVERY HTTP request
+    include HangpersonGame
   end
   
   after do
@@ -34,10 +35,10 @@ class HangpersonApp < Sinatra::Base
   post '/guess' do
     # get the guessed letter from params[:guess] (note: if user left it blank,
     #   params[:guess] will be nil)
-
+    result = guess(params[:guess])
     # Try guessing the letter.  If it has already been guessed,
     #   display "You have already used that letter."
-
+   # if result == t
     # Either way, the user should then be shown the main game screen ('show' action).
 
   end

@@ -17,13 +17,13 @@ class HangpersonGame
   def guess(g_letter)
      
      if (g_letter.nil?) || (g_letter.empty?) || !(g_letter.match(/[A-Za-z]/))  #[a-z]	Any single character in the range a-z
-        raise ArgumentError
-      end
+        raise ArgumentError.new("Your need to enter a valid alphabet")
+     end
   
      g_letter.downcase!
   
     
-    if (@guesses.include? g_letter) || (@wrong_guesses.include? g_letter)
+      if (@guesses.include? g_letter) || (@wrong_guesses.include? g_letter)
         return false
       elsif @word.include? g_letter
        @guesses << g_letter
@@ -31,7 +31,7 @@ class HangpersonGame
       else
        @wrong_guesses << g_letter
        return true
-     end
+      end
    
   end
   
